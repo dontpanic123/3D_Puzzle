@@ -101,7 +101,7 @@ int main(int argc, char * argv[]) try
                     std::string j = std::to_string(camera_count);
                     const auto window_name = "camera" + j;
                     resize(image, image_resize, Size(image.cols / 2, image.rows / 2), 0, 0, INTER_LINEAR);
-                    imshow(window_name, image_resize);
+                    imshow(window_name, image);
 
 
                     for (int i = 0; i < 4; i++)
@@ -166,7 +166,7 @@ int main(int argc, char * argv[]) try
                     std::string j = std::to_string(camera_count);
                     const auto window_name = "camera" + j;
                     resize(image1, image_resize, Size(image1.cols / 2, image1.rows / 2), 0, 0, INTER_LINEAR);
-                    imshow(window_name, image_resize);
+                    imshow(window_name, image1);
 
                     for (int i = 0; i < 4; i++)
                     {
@@ -215,7 +215,7 @@ int main(int argc, char * argv[]) try
                         imshow(block_name, image_ori1);*/
                     }
                     
-                    cvtColor(second_blocks[1], compare1, COLOR_BGR2HSV);
+                    cvtColor(second_blocks[0], compare1, COLOR_BGR2HSV);
                     imshow("compare_block_1", compare1);
                     break;
                 }
@@ -401,23 +401,4 @@ catch (const std::exception& e)
     std::cerr << e.what() << std::endl;
     return EXIT_FAILURE;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
